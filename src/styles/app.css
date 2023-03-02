@@ -13,22 +13,21 @@
 body {
   font-size: 1.6rem;
   font-family: "Inter";
+  background: #292738;
 }
 .grid {
   display: grid;
 }
 
 #app {
-  grid-template-columns: 29.6rem max-content max-content;
-  grid-template-rows: max-content;
-  min-width: 100vw;
+  margin: auto;
   width: fit-content;
   min-height: 100vh;
   height: fit-content;
   place-content: center;
   column-gap: 3.2rem;
   row-gap: 5.9rem;
-  background: #292738;
+  padding: 3.2rem;
 }
 
 .box {
@@ -38,15 +37,15 @@ body {
   border-radius: 1.6rem;
   color: white;
   line-height: 160%;
-}
-
-.box:nth-child(4) {
-  grid-column: 1/4;
+  gap: 3.2rem;
 }
 
 .top {
   font-weight: 600;
   font-size: 24px;
+}
+
+.text-center {
   text-align: center;
 }
 .middle {
@@ -155,9 +154,128 @@ svg circle:nth-child(2) {
   font-weight: 400;
 }
 
+.weekly-sell {
+  gap: 3.2rem;
+}
+
+.weekly-sell .wrapper {
+  display: flex;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+.weekly-sell .left {
+  gap: 3.2rem;
+  grid-auto-flow: column;
+  margin: auto;
+}
+
+.weekly-sell .left,
+.weekly-sell .right {
+  flex: 1;
+}
+
+.left .grid {
+  gap: 0.8rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.left .grid span {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.left .grid span::before {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
+}
+
+.left .most-sell span::before {
+  background: linear-gradient(180deg, #81fbb8 0%, #28c76f 100%);
+  margin-bottom: 0.8rem;
+}
+
+.left .less-sell span::before {
+  background: linear-gradient(180deg, #ea5455 0%, #feb692 100%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  margin-top: 0.8rem;
+}
+
+.bars {
+  display: flex;
+  gap: calc(3vh + 1rem);
+  align-items: flex-end;
+  position: relative;
+}
+
+.bars::before {
+  content: "";
+  width: 100%;
+  height: 0.3rem;
+  background: #4a4556;
+  border-radius: 99.9rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.bar {
+  display: block;
+  height: var(--height);
+  width: 1.5rem;
+  background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
+  border-radius: 99.9rem;
+  align-self: end;
+  animation: up 1.4s ease-in-out;
+}
+
+.bar-wrapper {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+  grid-template-rows: 15.9rem 1.6rem;
+}
 @keyframes progressbar {
   0% {
     stroke-dasharray: var(--circuferencia);
     stroke-dashoffset: var(--circuferencia);
+  }
+}
+
+@keyframes up {
+  0% {
+    height: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #app {
+    grid-template-columns: 29.6rem max-content max-content;
+    grid-template-rows: max-content;
+  }
+  .box:nth-child(4) {
+    grid-column: 1/4;
+  }
+  .weekly-sell .wrapper {
+    display: flex;
+    gap: 3.2rem;
+    flex-direction: row;
+  }
+
+  .weekly-sell .left {
+    gap: 3.2rem;
+    grid-auto-flow: row;
+  }
+  .bars {
+    gap: 6rem;
   }
 }
