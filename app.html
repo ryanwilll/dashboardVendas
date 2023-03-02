@@ -16,7 +16,7 @@
 <body>
   <main id="app" class="grid">
     <div class="box nps grid">
-      <div class="top">NPS Geral</div>
+      <div class="top text-center">NPS Geral</div>
       <div class="middle grid">
         <img src="./src/assets/images/smile-face.svg" alt="Rostinho feliz verde" />
         Excelente!
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="box sell grid">
-      <div class="top">Vendas Fechadas</div>
+      <div class="top text-center">Vendas Fechadas</div>
       <div class="middle">
         <svg viewBox="0 0 232 232" style="--porcentage: 70">
           <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="box target grid">
-      <div class="top">Meta Mensal</div>
+      <div class="top text-center">Meta Mensal</div>
       <div class="middle">
         <svg viewBox="0 0 232 232" style="--porcentage: 90">
           <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
@@ -94,21 +94,61 @@
         </div>
         <div class="item">
           <span style="
-                --bg-color: linear-gradient(
-                  121.94deg,
-                  #ce9ffc 15.98%,
-                  #7367f0 82.85%
-                );
+                --bg-color: linear-gradient(121.94deg, #DF9780 15.98%, #A66DE9 82.85%);
               ">Alcançado</span>
           <span>R$ 63K</span>
         </div>
       </div>
     </div>
-    <!-- <div class="box">
-            <div class="top"></div>
-            <div class="middle"></div>
-            <div class="bottom"></div>
-        </div> -->
+    <div class="box weekly-sell grid">
+      <div class="top">Vendas por dia da semana</div>
+      <div class="wrapper">
+        <div class="left grid">
+          <div class="most-sell grid">
+            <span>Dia com mais vendas</span>
+            quarta-feira
+          </div>
+          <div class="less-sell grid">
+            <span>Dia com menos vendas</span>
+            Domingo
+          </div>
+        </div>
+        <div class="right">
+
+          <div class="bars">
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 3.9rem"></div>
+              <span>dom</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 11.5rem"></div>
+              <span>seg</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 7.6rem"></div>
+              <span>ter</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 15.9rem"></div>
+              <span>qua</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 12.9rem"></div>
+              <span>qui</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 12rem"></div>
+              <span>sex</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="--height: 6.9rem"></div>
+              <span>sab</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </main>
 </body>
 
