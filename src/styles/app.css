@@ -34,10 +34,36 @@ body {
   padding: 3.2rem;
 }
 
-form {
-  display: grid;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;
 }
 
+select {
+  display: block;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgb(54, 52, 71);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bi-plus-circle-fill {
+  height: 2.6rem;
+  width: 2.6rem;
+  color: #28c76f;
+  cursor: pointer;
+}
+
+.bi-plus-circle-fill:hover {
+  color: #44da87;
+}
 .box {
   padding: 2.9rem 4.8rem;
   background: #363447;
@@ -254,6 +280,7 @@ svg circle:nth-child(2) {
 .bar {
   display: block;
   height: var(--height);
+  max-height: 18rem;
   width: 2rem;
   background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
   border-radius: 99.9rem;
@@ -267,18 +294,6 @@ svg circle:nth-child(2) {
   gap: 0.5rem;
   z-index: 1;
   grid-template-rows: 15.9rem 1.6rem;
-}
-
-select {
-  display: block;
-  margin: 1rem auto 0;
-  padding: 0.5rem 1rem;
-  outline: none;
-  border: none;
-  border-radius: 0.4rem;
-  background-color: rgb(54, 52, 71);
-  color: white;
-  text-align: center;
 }
 
 #btnSendSelect {
