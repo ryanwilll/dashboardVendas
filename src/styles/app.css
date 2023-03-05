@@ -19,15 +19,23 @@ body {
   display: grid;
 }
 
+.transition {
+  transition: all 0.5s ease;
+}
+
 #app {
   margin: auto;
   width: fit-content;
+  height: max-content;
   min-height: 100vh;
-  height: fit-content;
   place-content: center;
   column-gap: 3.2rem;
   row-gap: 5.9rem;
   padding: 3.2rem;
+}
+
+form {
+  display: grid;
 }
 
 .box {
@@ -38,11 +46,21 @@ body {
   color: white;
   line-height: 160%;
   gap: 3.2rem;
+  scale: 1;
+  transition: ease-in-out 0.4s all;
+}
+
+.box:not(:hover) {
+  scale: 1;
+}
+
+.box:hover {
+  scale: 1.01;
 }
 
 .top {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .text-center {
@@ -52,6 +70,11 @@ body {
   display: grid;
   position: relative;
   place-content: center;
+}
+
+.middle img {
+  height: 100px;
+  width: 100px;
 }
 .bottom {
   display: flex;
@@ -212,6 +235,7 @@ svg circle:nth-child(2) {
   gap: calc(3vh + 1rem);
   align-items: flex-end;
   position: relative;
+  cursor: help;
 }
 
 .bars::before {
@@ -230,7 +254,7 @@ svg circle:nth-child(2) {
 .bar {
   display: block;
   height: var(--height);
-  width: 1.5rem;
+  width: 2rem;
   background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
   border-radius: 99.9rem;
   align-self: end;
@@ -244,6 +268,84 @@ svg circle:nth-child(2) {
   z-index: 1;
   grid-template-rows: 15.9rem 1.6rem;
 }
+
+select {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgb(54, 52, 71);
+  color: white;
+  text-align: center;
+}
+
+#btnSendSelect {
+  display: block;
+  padding: 0.5rem 2.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  margin: 0.3rem auto;
+  color: white;
+  background-color: rgb(54, 52, 71);
+}
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 0.1rem dotted #666;
+  text-align: left;
+}
+
+.tooltip .top p {
+  font-size: 1.6rem;
+}
+
+.tooltip .top {
+  min-width: max-content;
+  max-width: 4rem;
+  top: -2rem;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  padding: 1rem 2rem;
+  color: #ffffff;
+  background-color: #009cdc;
+  font-weight: normal;
+  font-size: 1.4rem;
+  border-radius: 0.8rem;
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.tooltip:hover .top {
+  display: block;
+}
+
+.tooltip .top i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -1.5rem;
+  width: 3rem;
+  height: 1.5rem;
+  overflow: hidden;
+}
+
+.tooltip .top i::after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #009cdc;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.5);
+}
+
 @keyframes progressbar {
   0% {
     stroke-dasharray: var(--circuferencia);
@@ -261,6 +363,8 @@ svg circle:nth-child(2) {
   #app {
     grid-template-columns: 29.6rem max-content max-content;
     grid-template-rows: max-content;
+    padding: 0;
+    scale: 0.8;
   }
   .box:nth-child(4) {
     grid-column: 1/4;
