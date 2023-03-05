@@ -1,3 +1,5 @@
+const select = document.querySelector("select"); // Seleciona o elemento select
+
 const notaNPS = document.querySelector("#npsgeral-nota");
 const imgNota = document.querySelector("#img-npsgeral");
 const npsScore = document.querySelector("#score-nota");
@@ -21,6 +23,8 @@ const vendas = diasSemana.map((dia) => {
 const bar = diasSemana.map((dia) => {
   return document.querySelector(`#bar-${dia}`);
 });
+
+const btnAdd = document.querySelector("#btn-add");
 
 const data = [
   {
@@ -109,12 +113,15 @@ const data = [
   },
 ];
 
-const select = document.querySelector("select"); // Seleciona o elemento select
+btnAdd.addEventListener("click", () => {
+  alert("Função em desenvolvimento, por favor, aguarde!");
+});
+
 select.addEventListener("change", () => {
   const mesSelecionado = select.value; // Obtém o valor do select
   const objetoMes = data.find((obj) => obj.mes === mesSelecionado); // Procura o objeto com o mês selecionado
 
-  if (objetoMes === undefined || objetoMes === "non") {
+  if (objetoMes === undefined || objetoMes.value == "non") {
     notaNPS.style.color = "#4ECDC4";
     imgNota.setAttribute("src", "../src/assets/images/Confuse-Face.png");
     notaNPS.textContent = "Sem dados...";
@@ -135,6 +142,7 @@ select.addEventListener("change", () => {
     for (let i = 0; i < bar.length; i++) {
       bar[i].setAttribute("style", `--height: 0rem`);
     }
+    return;
   }
 
   if (objetoMes.NPSGeral === "Excelente!") {
