@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles/app.css" />
+  <link rel="shortcut icon" href="./src/assets/images/fav.png" type="image/x-icon" />
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <form action="send">
+    <select name="mes" id="mes" class="select">
+      <option value="non">Selecione o mês</option>
+      <option value="jan">Janeiro</option>
+      <option value="fev">Fevereiro</option>
+      <option value="mar">Março</option>
+      <option value="abr">Abril</option>
+      <option value="mai">Maio</option>
+      <option value="jun">Junho</option>
+      <option value="jul">Julho</option>
+      <option value="ago">Agosto</option>
+      <option value="set">Setembro</option>
+      <option value="out">Outubro</option>
+      <option value="nov">Novembro</option>
+      <option value="dez">Dezembro</option>
+    </select>
+  </form>
+  <main id="app" class="grid transition">
+    <div class="box nps grid">
+      <div class="top text-center">NPS Geral</div>
+      <div class="middle grid">
+        <img id="img-npsgeral" src="./src/assets/images/Star-Struck.png" alt="Emoji decorativo baseado na nota Geral" />
+        <p id="npsgeral-nota">Excelente!</p>
+      </div>
+      <div class="bottom">
+        <span>NPS Score</span>
+        <span id="score-nota">75</span>
+      </div>
+    </div>
+    <div class="box sell grid">
+      <div class="top text-center">Vendas Fechadas</div>
+      <div class="middle">
+        <svg viewBox="0 0 232 232" style="--porcentage: 70" id="porcentagem-vendas">
+          <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
+            meio do circulo opacity=".1" stroke="#D9D9D9" cor da borda />
+
+          <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
+            meio do circulo stroke="url(#paint0_linear_201_85)" cor da borda />
+
+          <defs>
+            <linearGradient id="paint0_linear_201_85" x1="-9" y1="82" x2="145" y2="178" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#CE9FFC" />
+              <stop offset="1" stop-color="#7367F0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="content">
+          <h3 class="vendaalcancadas-porc">70%</h3>
+          <p>alcançada</p>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="item">
+          <span>Esperado</span>
+          <span id="vendaesperada-porc">100%</span>
+        </div>
+        <div class="item">
+          <span style="
+                --bg-color: linear-gradient(
+                  121.94deg,
+                  #ce9ffc 15.98%,
+                  #7367f0 82.85%
+                );">Alcançado</span>
+          <span class="vendaalcancadas-porc">70%</span>
+        </div>
+      </div>
+    </div>
+    <div class=" box target grid">
+      <div class="top text-center">Meta Mensal</div>
+      <div class="middle">
+        <svg viewBox="0 0 232 232" style="--porcentage: 90" id="porcentagem-meta">
+          <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
+            meio do circulo opacity=".1" stroke="#D9D9D9" cor da borda />
+
+          <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
+            meio do circulo stroke="url(#paint0_linear_201_104)" cor da borda />
+
+          <defs>
+            <linearGradient id="paint0_linear_201_104" x1="-1.24156e-06" y1="82" x2="154" y2="178"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#DF9780" />
+              <stop offset="1" stop-color="#A66DE9" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="content">
+          <h3 id="metaalcancada-porc">90%</h3>
+          <p>alcançada</p>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="item">
+          <span>Esperado</span>
+          <span id="metaesperada-valor">R$ 70K</span>
+        </div>
+        <div class="item">
+          <span style="
+                --bg-color: linear-gradient(121.94deg, #DF9780 15.98%, #A66DE9 82.85%);
+              ">Alcançado</span>
+          <span id="metaalcancada-valor">R$ 63K</span>
+        </div>
+      </div>
+    </div>
+    <div class="box weekly-sell grid">
+      <div class="top">Vendas por dia da semana</div>
+      <div class="wrapper">
+        <div class="left grid">
+          <div class="most-sell grid">
+            <span>Dia com mais vendas</span>
+            Quarta-feira
+          </div>
+          <div class="less-sell grid">
+            <span>Dia com menos vendas</span>
+            Domingo
+          </div>
+        </div>
+        <div class="right">
+
+          <div class="bars">
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 3.9rem">
+                <div class="top">
+                  <p>4 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>dom</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 11.5rem">
+                <div class="top">
+                  <p>11 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>seg</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 7.6rem">
+                <div class="top">
+                  <p>8 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>ter</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 15.9rem">
+                <div class="top">
+                  <p>16 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>qua</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 12.9rem">
+                <div class="top">
+                  <p>13 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>qui</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 12rem">
+                <div class="top">
+                  <p>12 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>sex</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar tooltip" style="--height: 9rem">
+                <div class="top">
+                  <p>9 vendas</p>
+                  <i></i>
+                </div>
+              </div>
+              <span>sab</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./src/js/app.js" defer></script>
+</body>
+
+</html>
