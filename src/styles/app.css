@@ -66,7 +66,7 @@ select {
 }
 
 .box {
-  padding: 2.9rem 4.8rem;
+  padding: 2.9rem 0rem;
   background: #363447;
   box-shadow: 0.3rem 0.4rem 2.6rem rgba(0, 0, 0, 0.25);
   border-radius: 1.6rem;
@@ -76,14 +76,6 @@ select {
   gap: 3.2rem;
   scale: 1;
   transition: ease-in-out 0.4s all;
-}
-
-.box:not(:hover) {
-  scale: 1;
-}
-
-.box:hover {
-  scale: 1.01;
 }
 
 .top {
@@ -229,27 +221,35 @@ svg circle:nth-child(2) {
 .left .grid {
   gap: 0.8rem;
   font-weight: 500;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
 .left .grid span {
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 1rem;
 }
 
 .left .grid span::before {
   content: "";
   display: block;
   height: 1.5rem;
-  width: 1.5rem;
+  width: 10%;
   clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
 }
 
 .left .most-sell span::before {
   background: linear-gradient(180deg, #81fbb8 0%, #28c76f 100%);
   margin-bottom: 0.8rem;
+}
+
+.weekly-sell .top {
+  text-align: center;
+}
+
+.left .most-sell {
+  margin-left: 2rem;
 }
 
 .left .less-sell span::before {
@@ -260,10 +260,12 @@ svg circle:nth-child(2) {
 
 .bars {
   display: flex;
-  gap: calc(3vh + 1rem);
+  gap: 2vh;
   align-items: flex-end;
   position: relative;
   cursor: help;
+  align-items: center;
+  justify-content: center;
 }
 
 .bars::before {
@@ -383,6 +385,16 @@ svg circle:nth-child(2) {
     padding: 0;
     scale: 0.8;
   }
+  .weekly-sell .top {
+    text-align: left;
+  }
+
+  .left .most-sell {
+    margin-left: 0;
+  }
+  .box {
+    padding: 2.9rem 4.8rem;
+  }
   .box:nth-child(4) {
     grid-column: 1/4;
   }
@@ -391,7 +403,13 @@ svg circle:nth-child(2) {
     gap: 3.2rem;
     flex-direction: row;
   }
-
+  .left .grid span {
+    gap: 0.5rem;
+    font-size: 1.4rem;
+  }
+  .left .grid span::before {
+    width: 1.5rem;
+  }
   .weekly-sell .left {
     gap: 3.2rem;
     grid-auto-flow: row;
