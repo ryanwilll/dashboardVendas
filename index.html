@@ -14,39 +14,47 @@
 </head>
 
 <body>
-  <form action="send">
-    <select name="mes" id="mes" class="select">
-      <option value="non">Selecione o mês</option>
-      <option value="jan">Janeiro</option>
-      <option value="fev">Fevereiro</option>
-      <option value="mar">Março</option>
-      <option value="abr">Abril</option>
-      <option value="mai">Maio</option>
-      <option value="jun">Junho</option>
-      <option value="jul">Julho</option>
-      <option value="ago">Agosto</option>
-      <option value="set">Setembro</option>
-      <option value="out">Outubro</option>
-      <option value="nov">Novembro</option>
-      <option value="dez">Dezembro</option>
-    </select>
-  </form>
+  <div class="header">
+    <form action="send">
+      <select name="mes" id="mes" class="select">
+        <option value="non">Selecione o mês</option>
+        <option value="jan">Janeiro</option>
+        <option value="fev">Fevereiro</option>
+        <option value="mar">Março</option>
+        <option value="abr">Abril</option>
+        <option value="mai">Maio</option>
+        <option value="jun">Junho</option>
+        <option value="jul">Julho</option>
+        <option value="ago">Agosto</option>
+        <option value="set">Setembro</option>
+        <option value="out">Outubro</option>
+        <option value="nov">Novembro</option>
+        <option value="dez">Dezembro</option>
+      </select>
+    </form>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill"
+      viewBox="0 0 16 16">
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+    </svg>
+  </div>
   <main id="app" class="grid transition">
     <div class="box nps grid">
       <div class="top text-center">NPS Geral</div>
       <div class="middle grid">
-        <img id="img-npsgeral" src="./src/assets/images/Star-Struck.png" alt="Emoji decorativo baseado na nota Geral" />
-        <p id="npsgeral-nota">Excelente!</p>
+        <img id="img-npsgeral" src="./src/assets/images/Confuse-Face.png"
+          alt="Emoji decorativo baseado na nota Geral" />
+        <p id="npsgeral-nota">Sem dados...</p>
       </div>
       <div class="bottom">
         <span>NPS Score</span>
-        <span id="score-nota">75</span>
+        <span id="score-nota">00</span>
       </div>
     </div>
     <div class="box sell grid">
       <div class="top text-center">Vendas Fechadas</div>
       <div class="middle">
-        <svg viewBox="0 0 232 232" style="--porcentage: 70" id="porcentagem-vendas">
+        <svg viewBox="0 0 232 232" style="--porcentage: 0" id="porcentagem-vendas">
           <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
             meio do circulo opacity=".1" stroke="#D9D9D9" cor da borda />
 
@@ -61,14 +69,14 @@
           </defs>
         </svg>
         <div class="content">
-          <h3 class="vendaalcancadas-porc">70%</h3>
+          <h3 class="vendaalcancadas-porc">00%</h3>
           <p>alcançada</p>
         </div>
       </div>
       <div class="bottom">
         <div class="item">
           <span>Esperado</span>
-          <span id="vendaesperada-porc">100%</span>
+          <span id="vendaesperada-porc">00%</span>
         </div>
         <div class="item">
           <span style="
@@ -77,14 +85,14 @@
                   #ce9ffc 15.98%,
                   #7367f0 82.85%
                 );">Alcançado</span>
-          <span class="vendaalcancadas-porc">70%</span>
+          <span class="vendaalcancadas-porc">00%</span>
         </div>
       </div>
     </div>
     <div class=" box target grid">
       <div class="top text-center">Meta Mensal</div>
       <div class="middle">
-        <svg viewBox="0 0 232 232" style="--porcentage: 90" id="porcentagem-meta">
+        <svg viewBox="0 0 232 232" style="--porcentage: 0" id="porcentagem-meta">
           <circle cx="50%" cy="50%" Define a posição do circulo r="98.5" Define o Raio, distância de uma borda até o
             meio do circulo opacity=".1" stroke="#D9D9D9" cor da borda />
 
@@ -100,20 +108,20 @@
           </defs>
         </svg>
         <div class="content">
-          <h3 id="metaalcancada-porc">90%</h3>
+          <h3 id="metaalcancada-porc">00%</h3>
           <p>alcançada</p>
         </div>
       </div>
       <div class="bottom">
         <div class="item">
           <span>Esperado</span>
-          <span id="metaesperada-valor">R$ 70K</span>
+          <span id="metaesperada-valor">R$ 00K</span>
         </div>
         <div class="item">
           <span style="
                 --bg-color: linear-gradient(121.94deg, #DF9780 15.98%, #A66DE9 82.85%);
               ">Alcançado</span>
-          <span id="metaalcancada-valor">R$ 63K</span>
+          <span id="metaalcancada-valor">R$ 00K</span>
         </div>
       </div>
     </div>
@@ -123,81 +131,80 @@
         <div class="left grid">
           <div class="most-sell grid">
             <span>Dia com mais vendas</span>
-            Quarta-feira
+            <p id="most-sell-day">...</p>
           </div>
           <div class="less-sell grid">
             <span>Dia com menos vendas</span>
-            Domingo
+            <p id="less-sell-day">...</p>
           </div>
         </div>
         <div class="right">
 
           <div class="bars">
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 3.9rem">
+              <div class="bar tooltip" id="bar-dom" style="--height: 0rem">
                 <div class="top">
-                  <p>4 vendas</p>
+                  <p id="sell-dom">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>dom</span>
             </div>
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 11.5rem">
+              <div class="bar tooltip" id="bar-seg" style="--height: 0rem">
                 <div class="top">
-                  <p>11 vendas</p>
+                  <p id="sell-seg">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>seg</span>
             </div>
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 7.6rem">
+              <div class="bar tooltip" id="bar-ter" style="--height: 0rem">
                 <div class="top">
-                  <p>8 vendas</p>
+                  <p id="sell-ter">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>ter</span>
             </div>
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 15.9rem">
+              <div class="bar tooltip" id="bar-qua" style="--height: 0rem">
                 <div class="top">
-                  <p>16 vendas</p>
+                  <p id="sell-qua">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>qua</span>
             </div>
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 12.9rem">
+              <div class="bar tooltip" id="bar-qui" style="--height: 0rem">
                 <div class="top">
-                  <p>13 vendas</p>
+                  <p id="sell-qui">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>qui</span>
             </div>
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 12rem">
+              <div class="bar tooltip" id="bar-sex" style="--height: 0rem">
                 <div class="top">
-                  <p>12 vendas</p>
+                  <p id="sell-sex">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>sex</span>
             </div>
             <div class="bar-wrapper">
-              <div class="bar tooltip" style="--height: 9rem">
+              <div class="bar tooltip" id="bar-sab" style="--height: 0rem">
                 <div class="top">
-                  <p>9 vendas</p>
+                  <p id="sell-sab">0 vendas</p>
                   <i></i>
                 </div>
               </div>
               <span>sab</span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
