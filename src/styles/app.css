@@ -25,13 +25,13 @@ body {
 
 #app {
   margin: auto;
-  width: fit-content;
+  width: max-content;
   height: max-content;
   min-height: 100vh;
   place-content: center;
   column-gap: 3.2rem;
   row-gap: 5.9rem;
-  padding: 3.2rem;
+  padding: 3.2rem 0;
 }
 
 .header {
@@ -64,6 +64,7 @@ select {
 .bi-plus-circle-fill:hover {
   color: #44da87;
 }
+
 .box {
   padding: 2.9rem 4.8rem;
   background: #363447;
@@ -71,6 +72,7 @@ select {
   border-radius: 1.6rem;
   color: white;
   line-height: 160%;
+  max-width: 100vw;
   gap: 3.2rem;
   scale: 1;
   transition: ease-in-out 0.4s all;
