@@ -139,7 +139,7 @@ select {
 .nps .middle {
   min-height: 19.7rem;
   gap: 1.6rem;
-  color: #81fbb8;
+  color: #4ecdc4;
   font-weight: 600;
   font-size: 2.4rem;
   place-content: center;
@@ -263,7 +263,6 @@ svg circle:nth-child(2) {
   gap: 2vh;
   align-items: flex-end;
   position: relative;
-  cursor: help;
   align-items: center;
   justify-content: center;
 }
@@ -285,6 +284,7 @@ svg circle:nth-child(2) {
   display: block;
   height: var(--height);
   max-height: 18rem;
+  cursor: help;
   width: 2rem;
   background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
   border-radius: 99.9rem;
